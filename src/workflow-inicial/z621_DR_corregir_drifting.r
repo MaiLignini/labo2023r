@@ -11,9 +11,9 @@ require("yaml")
 
 # Parametros del script
 PARAM <- list()
-PARAM$experimento <- "DR6210_E3"
+PARAM$experimento <- "DR6210_E4"
 
-PARAM$exp_input <- "CA6110_E3"
+PARAM$exp_input <- "CA6110_E4"
 
 PARAM$variables_intrames <- TRUE # atencion esto esta en TRUE
 
@@ -219,7 +219,7 @@ AgregarVariables_IntraMes <- function(dataset) {
   
   
   #1. cuentas
-  dataset[, monto_tot_CC_CA:= mcuenta_corriente_adicional + mcuenta_corriente + mcaja_ahorro+ caja_ahorro_adicional+mcuenta_corriente_adicional]
+  dataset[, monto_tot_CC_CA:= mcuenta_corriente_adicional + mcuenta_corriente + mcaja_ahorro+ mcaja_ahorro_adicional+mcuenta_corriente_adicional]
   dataset[, prop_cc_adic := mcuenta_corriente_adicional / monto_tot_CC_CA]
   dataset[, prop_cc := mcuenta_corriente / monto_tot_CC_CA]
   dataset[, prop_ca := mcaja_ahorro/ monto_tot_CC_CA]
@@ -283,8 +283,8 @@ AgregarVariables_IntraMes <- function(dataset) {
   
   
   #7 debitos autom
-  dataset[, monto_tot_debaut := mcuenta_debitos_automaticos + mtarjeta_visa_debitos_automaticos + mttarjeta_master_debitos_automaticos]
-  dataset[, cant_tot_deb_aut := ccuenta_debitos_automaticos + ctarjeta_visa_debitos_automaticos + cttarjeta_master_debitos_automaticos]
+  dataset[, monto_tot_debaut := mcuenta_debitos_automaticos + mttarjeta_visa_debitos_automaticos + mttarjeta_master_debitos_automaticos]
+  dataset[, cant_tot_deb_aut := ccuenta_debitos_automaticos + ctarjeta_visa_debitos_automaticos + ctarjeta_master_debitos_automaticos]
   dataset[, prom_deb_aut := monto_tot_debaut/ cant_tot_deb_aut]
   
   #8 servicios
