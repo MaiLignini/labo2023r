@@ -17,7 +17,7 @@ require("lightgbm")
 
 # Parametros del script
 PARAM <- list()
-PARAM$experimento <- "FE7310_3"
+PARAM$experimento <- "FE7310_4"
 
 PARAM$exp_input <- "DR7210_0"
 
@@ -44,7 +44,7 @@ PARAM$Tendencias2$ratioavg <- FALSE
 PARAM$Tendencias2$ratiomax <- FALSE
 
 
-PARAM$RandomForest$run <- FALSE
+PARAM$RandomForest$run <- TRUE
 PARAM$RandomForest$num.trees <- 20
 PARAM$RandomForest$max.depth <- 4
 PARAM$RandomForest$min.node.size <- 1000
@@ -53,9 +53,9 @@ PARAM$RandomForest$semilla <- 103717 # cambiar por la propia semilla
 
 
 # varia de 0.0 a 2.0, si es 0.0 NO se activan
-PARAM$CanaritosAsesinos$ratio <- 0.0
+PARAM$CanaritosAsesinos$ratio <- 1.0
 # desvios estandar de la media, para el cutoff
-PARAM$CanaritosAsesinos$desvios <- 4.0
+PARAM$CanaritosAsesinos$desvios <- 2.0
 # cambiar por la propia semilla
 PARAM$CanaritosAsesinos$semilla <- 117023
 
