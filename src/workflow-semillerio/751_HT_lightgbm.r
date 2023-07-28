@@ -27,9 +27,9 @@ options(error = function() {
 
 # Parametros del script
 PARAM <- list()
-PARAM$experimento <- "HT7510_7"
+PARAM$experimento <- "HT7510_10"
 
-PARAM$exp_input <- "TS7410_7"
+PARAM$exp_input <- "TS7410_10"
 
 # En caso que se haga cross validation, se usa esta cantidad de folds
 PARAM$lgb_crossvalidation_folds <- 5
@@ -48,7 +48,7 @@ PARAM$lgb_basicos <- list(
   force_row_wise = TRUE, # para reducir warnings
   verbosity = -100,
   max_depth = -1L, # -1 significa no limitar,  por ahora lo dejo fijo
-  min_gain_to_split = 0.0, # min_gain_to_split >= 0.0
+  min_gain_to_split = 0.0001, # min_gain_to_split >= 0.0
   min_sum_hessian_in_leaf = 0.001, #  min_sum_hessian_in_leaf >= 0.0
   lambda_l1 = 0.0, # lambda_l1 >= 0.0
   lambda_l2 = 0.0, # lambda_l2 >= 0.0
